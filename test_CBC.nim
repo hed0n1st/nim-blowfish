@@ -1,5 +1,5 @@
 
-import blowfish
+import src/blowfish
 import strformat
 
 when isMainModule:
@@ -15,7 +15,7 @@ when isMainModule:
   ctx.newContext(key, iv)
 
   echo fmt"encode this: {encode}" & "\n"
-  
+
   var encodeSeq = encode.toSeqByte()
 
   var encoded = ctx.encodeCBC(encode)
@@ -36,4 +36,3 @@ when isMainModule:
 
   echo fmt"decoded as seq: {decSeq}"
   echo fmt"decoded as string: {decStr}"
-  
